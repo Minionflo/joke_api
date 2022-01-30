@@ -22,7 +22,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	var joke string = jokes[rand.Intn(len(jokes))]
-	jokee := `{"body":"` + joke + `"}`
+	jokee := `{"joke":"` + joke + `"}`
 	fmt.Fprintf(w, jokee)
 }
 
