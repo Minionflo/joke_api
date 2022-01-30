@@ -21,7 +21,9 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Method is not supported.", http.StatusNotFound)
 		return
 	}
-	fmt.Fprintf(w, jokes[rand.Intn(len(jokes))])
+	var joke string = jokes[rand.Intn(len(jokes))]
+	jokee := `{"body":"` + joke + `"}`
+	fmt.Fprintf(w, jokee)
 }
 
 func main() {
